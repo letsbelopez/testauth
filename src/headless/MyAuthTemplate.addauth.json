@@ -1,0 +1,34 @@
+{
+  "$schema": "/home/lopezbnd/repos/test-auth/node_modules/amplify-headless-interface/schemas/auth/1/AddAuthRequest.schema.json",
+  "version": 1,
+  "resourceName": "testAuthResource",
+  "serviceConfiguration": {
+    "includeIdentityPool": false,
+    "serviceName": "Cognito",
+    "userPoolConfiguration": {
+      "requiredSignupAttributes": ["EMAIL"],
+      "signinMethod": "EMAIL",
+      "userPoolName": "testAuthUserPool",
+      "oAuth": {
+        "oAuthGrantType": "IMPLICIT",
+        "oAuthScopes": ["EMAIL", "PHONE"],
+        "redirectSigninURIs": ["http://localhost:3000"],
+        "redirectSignoutURIs": ["http://localhost:3000"],
+        "socialProviderConfigurations": [
+          {
+            "provider": "FACEBOOK",
+            "clientId": "123",
+            "clientSecret": "456"
+          }
+        ],
+        "signInWithAppleProviderConfiguration": {
+          "provider": "SIGN_IN_WITH_APPLE",
+          "appId": "com.amplifyadmintestservice.app",
+          "keyId": "123",
+          "teamId": "123",
+          "privateKey": "456"
+        }
+      }
+    }
+  }
+}
